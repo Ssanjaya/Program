@@ -1,16 +1,17 @@
 public class Weight {
-   public static void main(String[] args){
-       int[] array = {36,40,8,12,7};  
-      int[] sumOfWeight = new int[array.length];
+    public static void main(String[] args){
+        int[] array = {36, 49, 9, 16, 25};
+        int[] sumOfWeight = new int[array.length];
         for(int i = 0; i < array.length;i++){
-        double perfectSquare=(Math.sqrt(i))-(Math.floor(Math.sqrt(i)));
+            double sqrt=Math.sqrt(array[i]);
+            double perfectSquare=(sqrt)- Math.floor(sqrt);
             if(perfectSquare ==0){
                 sumOfWeight[i]+=5;
             }
-             if((array[i]%4==0)&&(array[i]%6==0)){
+            if((array[i]%4==0)&&(array[i]%6==0)){
                 sumOfWeight[i]+=4;
             }
-             if(array[i]%2==0){
+            if(array[i]%2==0){
                 sumOfWeight[i]+=3;
             }
         }
@@ -30,7 +31,4 @@ public class Weight {
             System.out.print("<"+array[i]+","+sumOfWeight[i]+">"+" ");
         }
     }
-   }
-       
-    
-
+}
