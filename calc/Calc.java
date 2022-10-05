@@ -5,6 +5,7 @@ public class Calc {
     private final static char SUB='-';
     private final static char MUL='*';
     private final static char DIV='/';
+    private final static char EXP='^';
      Stack<Integer> stack;
     public Calc(){
         stack = new Stack<>();
@@ -30,7 +31,7 @@ public class Calc {
         return result;
     }
     public boolean isOpertor(String token){
-        return (token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/"));
+        return (token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/")|| token.equals("^"));
     }
     private int evaluateOperation(char operator , int opr1 , int opr2){
         return switch (operator) {
@@ -38,6 +39,7 @@ public class Calc {
             case SUB -> opr1 - opr2;
             case MUL -> opr1 * opr2;
             case DIV -> opr1 / opr2;
+            case EXP -> opr1 ^ opr2;
             default -> 0;
         };
     }
