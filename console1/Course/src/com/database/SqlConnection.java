@@ -12,7 +12,7 @@ public class SqlConnection
     protected static Connection connectionInstance() throws ClassNotFoundException, SQLException
     {
 
-        Class.forName("org.postgresql.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
         return conn;
